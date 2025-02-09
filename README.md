@@ -1,4 +1,5 @@
-# anime-or-not
+# Anime-Or-Not
+
 Anime-Or-Not (AoN) is an API that exposes prediction endpoint of an deep learning leveraged image classifier, detecting if its either anime or cartoon.
 
 ## Project Overview
