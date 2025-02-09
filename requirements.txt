@@ -8,5 +8,6 @@ torch==2.6.0+cu126
 torchaudio==2.6.0+cu126 
 torchvision==0.21.0+cu126
 torchinfo==1.8.0
+wandb==0.19.6
 
 --extra-index-url https://download.pytorch.org/whl/cu126
