@@ -20,3 +20,13 @@ router = APIRouter(prefix="/model", tags=["model"])
 #         GuestData: A list of all guests.
 #     """
 #     return guest_service.dummy_guest_data
+
+@router.get("/model-info", response_model=dict[str, str])
+async def read_guests() -> dict[str, str]:
+    """
+    Returns the model name
+
+    Returns:
+    - dict[str, str]: A dictionary containing the model name.
+    """
+    return {"model": "ResNet50"}
