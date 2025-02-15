@@ -11,12 +11,14 @@ router = APIRouter(prefix="/model", tags=["model"])
 
 
 # Define the routes
-# @router.get("/health", response_model=GuestData)
-# async def read_guests() -> GuestData:
-#     """
-#     Retrieve all guests.
+@router.get("/health", response_model=dict[str, str])
+async def read_guests() -> dict[str, str]:
+    """
+    check if the model service is running.
 
-#     Returns:
-#         GuestData: A list of all guests.
-#     """
-#     return guest_service.dummy_guest_data
+    Returns:
+    - dict[str, str]: A dictionary containing the status of the service.
+    """
+    return {"status": "Model service is running"}
+    # """
+    # return guest_service.dummy_guest_data
