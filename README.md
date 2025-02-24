@@ -19,3 +19,14 @@ Although Anime and Cartoon both are a form of animation and look almost the same
 - Fully documented API endpoints (Swagger UI).
 - Performance metrics and model evaluation report.
 - Deployment-ready containerized application.
+
+## Milestones
+
+- [x] develop ML prediction pipeline 🤖
+- [x] Expose the prediction pipeline with api end points 🌐
+- [ ] unit testing 🧪
+- [ ] write comprehensive readme 📖✨
+- [ ] dockerize the repo & add resources 🐳
+- [x] Code Auto-formatting & Linting with Pre-commit (check-yaml, end-of-file-fixer, trailing-whitespace, black, isort, mypy) 🎨
+- [ ] add GitHub Action for format checks ✅
+- [ ] Study deploy requirement and deploy! 🚀
