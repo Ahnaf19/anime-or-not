@@ -23,6 +23,7 @@ async def read_health() -> dict[str, str]:
     # """
     # return guest_service.dummy_guest_data
 
+
 @router.get("/model-info", response_model=dict[str, str])
 async def read_info() -> dict[str, str]:
     """
