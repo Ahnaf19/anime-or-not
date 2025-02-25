@@ -12,9 +12,11 @@ from deep_learning_model.prediction import make_pred
 
 class ModelService:
     def __init__(self):
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
         model = models.resnet50()
         model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=2, bias=True)
-        model.load_state_dict(torch.load("deep_learning_model/models/model-run4.pth"))
+        model.load_state_dict(torch.load("deep_learning_model/models/model-run4.pth", map_location=self.device))
 
         self.model = model
         self.total_params = sum(p.numel() for p in self.model.parameters())
@@ -46,7 +48,7 @@ class ModelService:
         img = Image.open(io.BytesIO(contents)).convert("RGB")
 
         try:
-            predicted_label, predicted_probs = make_pred(img=img)
+            predicted_label, predicted_probs = make_pred(img=img, model=self.model)
             return ModelPredictionResponse(predicted_label=predicted_label, predicted_prob=predicted_probs)
         except Exception as e:
             raise HTTPException(status_code=503, detail="Service Unavailable: " + str(e))

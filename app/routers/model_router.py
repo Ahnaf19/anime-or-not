@@ -28,7 +28,7 @@ async def read_info() -> ModelInfoResponse:
     Returns the model name
 
     Returns:
-    - ModelInfoResponse: A dictionary containing the model name.
+    - ModelInfoResponse: A dictionary containing the model information.
     """
     return model_service.get_model_info()
 

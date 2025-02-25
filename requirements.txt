@@ -1,21 +1,8 @@
-black==25.1.0
-flake8==7.1.1
-isort==6.0.0
-nbconvert==7.16.6
-pre-commit==4.1.0
-pylint==3.3.4
-kagglehub[pandas-datasets]==0.3.7
 fastapi==0.115.8
 uvicorn==0.34.0
-numpy==2.2.2
-pandas==2.2.2
-matplotlib==3.10.0
 pillow==11.1.0
 torch==2.6.0+cu126
-torchaudio==2.6.0+cu126
 torchvision==0.21.0+cu126
-torchinfo==1.8.0
-wandb==0.19.6
 python-multipart==0.0.20
 
 --extra-index-url https://download.pytorch.org/whl/cu126
