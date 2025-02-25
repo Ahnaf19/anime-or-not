@@ -1,24 +1,10 @@
-from enum import Enum
 from typing import Optional, Tuple
 
 import torch
 from PIL import Image
 from torchvision import models, transforms
 
-
-class DeviceType(Enum):
-    """
-    Enum class to represent different types of devices that can be used for computation.
-
-    Attributes:
-        CPU (str): Represents the CPU device type.
-        CUDA (str): Represents the CUDA (GPU) device type.
-        AUTO (str): Automatically selects the appropriate device type based on availability.
-    """
-
-    CPU = "cpu"
-    CUDA = "cuda"
-    AUTO = "auto"
+from app.schemas.model_schema import DeviceType
 
 
 def make_pred(
@@ -40,7 +26,7 @@ def make_pred(
     if model is None:
         model = models.resnet50()
         model.fc = torch.nn.Linear(in_features=model.fc.in_features, out_features=len(class_names), bias=True)
-        model.load_state_dict(torch.load("deep_learning_model/models/model-run4.pth"))
+        model.load_state_dict(torch.load("deep_learning_model/models/model-run4.pth", map_location=str(device)))
 
     if img is None:
         img = Image.open(image_path).convert("RGB")

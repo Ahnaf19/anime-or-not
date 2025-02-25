@@ -1,3 +1,5 @@
+from enum import Enum
+
 from pydantic import BaseModel
 
 
@@ -16,3 +18,18 @@ class ModelInfoResponse(BaseModel):
 class ModelPredictionResponse(BaseModel):
     predicted_label: str
     predicted_prob: float
+
+
+class DeviceType(Enum):
+    """
+    Enum class to represent different types of devices that can be used for computation.
+
+    Attributes:
+        CPU (str): Represents the CPU device type.
+        CUDA (str): Represents the CUDA (GPU) device type.
+        AUTO (str): Automatically selects the appropriate device type based on availability.
+    """
+
+    CPU = "cpu"
+    CUDA = "cuda"
+    AUTO = "auto"
