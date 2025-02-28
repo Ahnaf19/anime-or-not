@@ -38,6 +38,11 @@ After building the Docker image, you can run it using the following command:
 ```sh
 docker run -dp 8000:8000 aon:latest
 ```
+or give the container a name:
+
+```sh
+docker run -dp 8000:8000 --name aon-latest aon:latest
+```
 
 This will start the application in a Docker container. The application can be accessed at `http://localhost:8000` e.g. `127.0.0.1:8000`
 
